@@ -1,0 +1,20 @@
+#! /usr/bin/env node --harmony
+
+const cmd = require('commander')
+const chalk = require('chalk')
+cmd
+    .version('1.0.0')
+cmd
+    .usage('<command>')
+cmd
+    .command('npm')
+    .description("npm镜像源切换工具")
+    .action(() => {
+        require('../command/npm')();
+    })
+cmd
+    .command('*', "无效")
+    .action(function (env) {
+        console.log(chalk.red('无效命令'));
+    });
+cmd.parse(process.argv)           

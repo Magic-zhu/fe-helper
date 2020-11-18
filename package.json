@@ -1,0 +1,32 @@
+{
+  "name": "@magic-zhu/fe-helper",
+  "version": "1.0.0",
+  "description": "前端开发辅助工具",
+  "main": "bin/fe",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magic-zhu/fe-helper.git"
+  },
+  "keywords": [
+    "cli",
+    "helper"
+  ],
+  "author": "magic-zhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Magic-zhu/fe-helper/issues"
+  },
+  "homepage": "https://github.com/Magic-zhu/fe-helper#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.2.0",
+    "inquirer": "^7.3.3",
+    "ora": "^5.1.0"
+  },
+  "bin": {
+    "fe": "bin/fe"
+  }
+}
