@@ -13,8 +13,26 @@ cmd
         require('../command/npm')();
     })
 cmd
+    .command('view')
+    .description("mac 常用命令")
+    .action(() => {
+        require('../command/view')();
+    })
+cmd
+    .command('min <path>')
+    .description("压缩gif图片")
+    .action((path) => {
+        require('../command/minify.js')(path);
+    })
+cmd
+    .command('toAg <path>')
+    .description("gif转成apng")
+    .action((path) => {
+        require('../command/toApng.js')(path);
+    })    
+cmd
     .command('*', "无效")
     .action(function (env) {
         console.log(chalk.red('无效命令'));
     });
-cmd.parse(process.argv)           
+cmd.parse(process.argv)
