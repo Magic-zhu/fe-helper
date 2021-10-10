@@ -9,25 +9,18 @@ module.exports = function(){
             message: "选择镜像源?",
             choices: [
                 "npm原始",
-                "淘宝",
-                "得物"
+                "淘宝"
             ]
         }
     ]).then(answers=>{
         if(answers.npm_origin=='npm原始'){
-            child.exec('npm config set registry http://registry.npmjs.org/',(err,data)=>{
+            child.exec('npm config set registry https://registry.npmjs.org/',(err,data)=>{
                 if(!err) spinner.succeed('设置成功')
                 else spinner.fail(err);
             })
         }
         if(answers.npm_origin=='淘宝'){
             child.exec('npm config set registry http://registry.npm.taobao.org/',(err,data)=>{
-                if(!err) spinner.succeed('设置成功')
-                else spinner.fail(err);
-            })
-        }
-        if(answers.npm_origin=='得物'){
-            child.exec('npm config set registry http://npm.poizon.com',(err,data)=>{
                 if(!err) spinner.succeed('设置成功')
                 else spinner.fail(err);
             })
