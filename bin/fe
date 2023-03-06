@@ -29,7 +29,19 @@ cmd
     .description("gif转成apng")
     .action((path) => {
         require('../command/toApng.js')(path);
-    })    
+    })
+cmd
+    .command('ls')
+    .description("列出保存的路径")
+    .action((path) => {
+        require('../command/ls.js')(path);
+    })
+cmd
+    .command('reg <path>')
+    .description("注册一条文本")
+    .action((path) => {
+        require('../command/reg.js')(path);
+    })
 cmd
     .command('*', "无效")
     .action(function (env) {
