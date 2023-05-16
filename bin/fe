@@ -7,10 +7,10 @@ cmd
 cmd
     .usage('<command>')
 cmd
-    .command('npm')
+    .command('npm <type>')
     .description("npm镜像源切换工具")
-    .action(() => {
-        require('../command/npm')();
+    .action((type) => {
+        require('../command/npm.js')(type);
     })
 cmd
     .command('view')
