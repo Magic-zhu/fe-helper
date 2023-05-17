@@ -8,7 +8,7 @@ module.exports = function (type) {
       "npm get registry --global",
       (err, data) => {
         if (!err) {
-          if (data == "https://registry.npmmirror.com/") {
+          if (data.indexOf("npmjs") === -1) {
             spinner.info("淘宝");
           } else {
             spinner.info("原始");
