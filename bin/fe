@@ -32,7 +32,7 @@ cmd
     })
 cmd
     .command('ls')
-    .description("列出保存的路径")
+    .description("列出保存的文本")
     .action((path) => {
         require('../command/ls.js')(path);
     })
